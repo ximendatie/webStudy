@@ -50,7 +50,22 @@ ng-pristine
 
 -->
 
+<div ng-app="myApp" ng-controller="costCtrl">
 
+数量: <input type="number" ng-model="quantity">
+价格: <input type="number" ng-model="price">
+
+<p>总价 = {{ (quantity * price) | currency }}</p>
+
+</div>
+
+<script>
+var app = angular.module('myApp', []);
+app.controller('costCtrl', function($scope) {
+    $scope.quantity = 1;
+    $scope.price = 9.99;
+});
+</script>
 
 
 </body>
